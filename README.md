@@ -1,2 +1,2 @@
-# boot-plus-ssw
-UNC School of Social Work Plugin
+# boot-plus
+Adds shortcodes that can be used with any bootstrap theme.
