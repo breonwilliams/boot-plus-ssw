@@ -1,6 +1,6 @@
 var table;
 jQuery(function($) {
-    table = $('#coursesTable').DataTable({
+    table = $('#staffTable').DataTable({
         dom: 'lrtip',
         initComplete: function() {
             this.api().columns([2]).every(function() {
@@ -11,15 +11,8 @@ jQuery(function($) {
                     select.append('<option value="' + d + '">' + d + '</option>')
                 });
             });
-            this.api().columns([3]).every(function() {
-                var column = this;
-                console.log(column);
-                var select = $("#courseNumberFltr");
-                column.data().unique().sort().each(function(d, j) {
-                    select.append('<option value="' + d + '">' + d + '</option>')
-                });
-            });
-            $("#instructorFltr,#courseNumberFltr").material_select();
+
+            $("#instructorFltr").material_select();
 
             $('.dataTables_filter').each(function() {
                 $(this).append('<button id="test" class="btn btn-default" type="button">Clear Search</button>');
@@ -62,20 +55,6 @@ $('#instructorFltr').on('change', function() {
     table.column(2).search(search, true, false).draw();
 });
 
-$('#courseNumberFltr').on('change', function() {
-    var search = [];
 
-    $.each($('#courseNumberFltr option:selected'), function() {
-        search.push($(this).val());
-    });
-    if(search.length)
-    {
-        if(search[0]=="")
-            search.splice(0,1);
-    }
-    search = search.join('|');
-    table.column(3).search(search, true, false).draw();
-    console.log("search"+search);
-});
 });
 

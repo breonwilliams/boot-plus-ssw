@@ -3,7 +3,7 @@ jQuery(function ($) {
   //Normally set in the title tag of your page.
   //document.title='Simple DataTable';
   // DataTable initialisation
-  $('#coursesTable').DataTable(
+  $('#staffTable').DataTable(
       {
         "dom": '<"dt-buttons"Bf><"clear">lirtp',
         "paging": true,

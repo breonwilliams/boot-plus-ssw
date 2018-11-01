@@ -430,7 +430,6 @@ function datatables_recent_courses( $atts ) {
         'course_category' => '',
     ), $atts ) );
 
-    $class = $atts['class'];
 
     // define query parameters based on attributes
     $options = array(
@@ -452,21 +451,16 @@ function datatables_recent_courses( $atts ) {
                         <option value="" disabled>Choose your option</option>
                     </select>
                 </div>
-                <div class="col-md-3">
-                    <span>Course Numbers</span>
-                    <select id="courseNumberFltr" multiple="true">
-                        <option value="" disabled>Choose your option</option>
-                    </select>
-                </div>
+
             </div>
 
-  <table id="coursesTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
+  <table id="staffTable" class="table table-1 table-striped dt-responsive" cellspacing="0" width="100%">
     <thead>
       <tr>
-        <th class="col-md-3">Course Name</th>
-        <th class="col-md-3">Course Category</th>
-        <th class="col-md-3">Instructor</th>
-        <th class="col-md-3">Course Number</th>
+        <th class="col-md-3">Name</th>
+        <th class="col-md-3">Email</th>
+        <th class="col-md-3">Phone</th>
+        <th class="col-md-3">Category</th>
       </tr>
     </thead>
     <tbody>
@@ -475,18 +469,31 @@ function datatables_recent_courses( $atts ) {
 
       <tr>
         <td scope="row">
+            <?php if( get_field('staff_photo') ): ?>
+                <?php
+
+                $image = get_field('staff_photo');
+
+                if( !empty($image) ): ?>
+                    <a href="<?php the_permalink(); ?>">
+                        <img class="stf-photo rounded" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+                    </a>
+
+                <?php endif; ?>
+            <?php endif; ?>
           <strong><a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
           </a></strong>
         </td>
         <td>
-          <?php list_hierarchical_terms(); ?>
+            <?php the_field( 'staff_email' ); ?>
         </td>
         <td>
-          <?php the_field( 'course_instructor' ); ?>
+          <?php the_field( 'staff_phone_number' ); ?>
         </td>
         <td>
-          <?php the_field( 'course_number' ); ?>
+            <?php list_hierarchical_terms(); ?>
+
           <?php
 	$gtcc_register = get_theme_mod( 'registration_textbox', '' );
 	if($gtcc_register) { ?>

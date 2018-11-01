@@ -5,6 +5,10 @@ img {
     height: auto;
 }
 
+.stf-photo {
+    max-height: 50px;
+}
+
 .thumbnail .caption-fixedh {
     overflow: hidden;
     height: 150px;
