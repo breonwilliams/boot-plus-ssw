@@ -29,11 +29,12 @@ if ( ! function_exists('list_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
 
+        $output = '';
         $output .= '<ul class="media recent-posts '.$class.'">';
 
         if($query->have_posts()) : $output;
@@ -138,7 +139,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
@@ -239,7 +240,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
             'order'             =>  $atts["order"],
             'orderby'           =>  $atts["orderby"],
             'paged'             =>  $paged,
-            'category_name' => $category
+            'category_name' => $atts["category"],
         );
 
         $query = new WP_Query($args);
@@ -446,7 +447,7 @@ function datatables_recent_courses( $atts ) {
 
             <div id="dataTablesSelect" class="row">
                 <div class="col-md-3">
-                    <span multiple="true">Instructors</span>
+                    <span multiple="true">Category</span>
                     <select multiple="true" id="instructorFltr">
                         <option value="" disabled>Choose your option</option>
                     </select>
@@ -492,15 +493,11 @@ function datatables_recent_courses( $atts ) {
           <?php the_field( 'staff_phone_number' ); ?>
         </td>
         <td>
-            <?php list_hierarchical_terms(); ?>
 
-          <?php
-	$gtcc_register = get_theme_mod( 'registration_textbox', '' );
-	if($gtcc_register) { ?>
-		<p><a href="<?php echo $gtcc_register; ?>" class="btn btn-primary btn-sm btn-bordered margintop-15" target="_blank">Register <i class="fa fa-chevron-right"></i></a></p>
-	<?php } else { ?>
+            <?php global $post; $terms_as_text = get_the_term_list( $post->ID,'staff_category', ' ', ', '); if (!empty($terms_as_text)) echo '
+            ', strip_tags($terms_as_text) ,''; ?>
 
-	<?php } ?>
+
         </td>
       </tr>
 

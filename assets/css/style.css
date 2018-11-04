@@ -6,7 +6,7 @@ img {
 }
 
 .stf-photo {
-    max-height: 50px;
+    max-height: 80px;
 }
 
 .thumbnail .caption-fixedh {
@@ -212,4 +212,8 @@ img {
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-attachment: fixed;
+}
+
+.dt-button-collection.dropdown-menu>.active>a, .dt-button-collection.dropdown-menu>.active>a:focus, .dt-button-collection.dropdown-menu>.active>a:hover {
+    background: #4B9CD3;
 }

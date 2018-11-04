@@ -3,7 +3,7 @@ jQuery(function($) {
     table = $('#staffTable').DataTable({
         dom: 'lrtip',
         initComplete: function() {
-            this.api().columns([2]).every(function() {
+            this.api().columns([3]).every(function() {
                 var column = this;
                 console.log(column);
                 var select = $("#instructorFltr");
@@ -52,7 +52,7 @@ $('#instructorFltr').on('change', function() {
             search.splice(0,1);
     }
     search = search.join('|');
-    table.column(2).search(search, true, false).draw();
+    table.column(3).search(search, true, false).draw();
 });
 
 
