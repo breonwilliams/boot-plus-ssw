@@ -53,7 +53,7 @@
                 {
                     text: 'Recent Events',
                     onclick: function() {
-                                editor.insertContent('[events-tribe-list cat="" number="2"]');
+                                editor.insertContent('[events-tribe-list cat="" number="2" class=""]');
                             }
                 },
                 {
@@ -130,6 +130,12 @@
                     onclick: function() {
                                 editor.insertContent('[custom_div class=""][/custom_div]');
                             }
+                },
+                {
+                    text: 'Custom Menu',
+                    onclick: function() {
+                        editor.insertContent('[listmenu menu="" menu_class=""]');
+                    }
                 },
                 {
                     text: 'Carousel',

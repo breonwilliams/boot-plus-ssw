@@ -149,6 +149,7 @@ include($bootplus_shortcodes_path.'/assets/thumbnails.php');
 include($bootplus_shortcodes_path.'/assets/google-map.php');
 include($bootplus_shortcodes_path.'/assets/page-categories.php');
 include($bootplus_shortcodes_path.'/assets/taxonomy-posts-list.php');
+include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
 
 
 //include($bootplus_shortcodes_path.'/assets/cpt-ui/post-types.php');

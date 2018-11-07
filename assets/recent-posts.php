@@ -482,9 +482,9 @@ function datatables_recent_courses( $atts ) {
 
                 <?php endif; ?>
             <?php endif; ?>
-          <strong><a href="<?php the_permalink(); ?>">
+          <p><strong><a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
-          </a></strong>
+          </a></strong></p>
         </td>
         <td>
             <?php the_field( 'staff_email' ); ?>
