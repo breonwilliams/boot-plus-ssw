@@ -217,3 +217,87 @@ img {
 .dt-button-collection.dropdown-menu>.active>a, .dt-button-collection.dropdown-menu>.active>a:focus, .dt-button-collection.dropdown-menu>.active>a:hover {
     background: #4B9CD3;
 }
+
+/* recent posts */
+
+ul.rct-posts-horiz {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.rct-post-hwrap {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .075);
+    position: relative;
+    margin: 15px 0;
+}
+
+.rct-post-hwrap .rct-posts-img {
+    max-width: 300px;
+}
+
+.arrow-width {
+    width: 60px;
+    height: 60px;
+    top: 50%;
+    right: -60px;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    position: absolute;
+}
+
+.rct-post-arrow {
+    height: 60px;
+    width: 60px;
+    position: relative;
+    background: #4B9CD3;
+    color: #fff;
+    border-radius: 4px;
+    transform: rotate(45deg);
+}
+
+.center-arrow {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+.center-arrow .fa-angle-right {
+    font-size: 30px;
+    transform: rotate(-45deg);
+}
+
+.rct-post-content {
+    padding: 30px;
+}
+
+.rct-posts-horiz  .date {
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0;
+
+}
+
+.rct-posts-horiz .media-heading a {
+    text-transform: uppercase;
+    color: #121212;
+}
+
+
+@media (min-width: 767px) {
+    .float-post-img {
+        float: left;
+    }
+}
+
+@media (max-width: 767px) {
+
+    .arrow-width {
+        top: 100%;
+        right: 20%;
+        position: absolute;
+    }
+}

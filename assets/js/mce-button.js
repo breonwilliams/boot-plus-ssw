@@ -83,6 +83,12 @@
                             }
                         },
                         {
+                            text: 'Recent Posts Horizontal List',
+                            onclick: function() {
+                                editor.insertContent('[list_recent_posts_horiz category="" class="" ptype="" per_page="4"]');
+                            }
+                        },
+                        {
                             text: 'Recent Posts Thumbnails',
                             onclick: function() {
                                 editor.insertContent('[thumb_recent_posts column="col-md-4" class="" ptype="" per_page="4"]');

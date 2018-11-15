@@ -35,7 +35,7 @@ function ckhp_get_tribe_list($atts) {
     }
 
     $posts = tribe_get_events(apply_filters('tribe_events_list_widget_query_args', array(
-        'eventDisplay' => 'upcoming',
+        'upcoming' => 'upcoming',
         'posts_per_page' => $ckhp_number,
         'tax_query'=> $ckhp_event_tax
     )));
@@ -50,17 +50,17 @@ function ckhp_get_tribe_list($atts) {
                 $output .= '<a href="' . tribe_get_event_link() . '" rel="bookmark">';
                 $output .= '<div class="event-post">';
                 $output .= '<div class="event-date">';
-                $output .= '<time>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'M') . '<span>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'd') . '</span></time>';
+                $output .= '<time>' . tribe_get_start_date($postId = null, $showtime = true, $dateFormat = 'M') . '<span>' . tribe_get_start_date($postId = null, $showtime = true, $dateFormat = 'd') . '</span></time>';
                 $output .= '</div>';
                 $output .= '<div class="event-details">';
-                $output .= '<p>' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'l') . ' ' . sp_get_start_date($postId = null, $showtime = true, $dateFormat = 'g:i a') . '</p>';
+                $output .= '<p>' . tribe_get_start_date($postId = null, $showtime = true, $dateFormat = 'l') . ' ' . tribe_get_start_date($postId = null, $showtime = true, $dateFormat = 'g:i a') . '</p>';
                 $output .= '<h4 class="media-heading">' . '<a href="' . tribe_get_event_link() . '" rel="bookmark">' . get_the_title() . '</a>' . '</h4>';
                 $output .= '</div>';
                 $output .= '</div>';
                 $output .= '</a>';
             endforeach;
             $output .= '</div><!-- .hfeed -->';
-            $output .= '<p class="tribe-events-widget-link"><a class="btn btn-primary btn-sm" href="' . tribe_get_events_link() . '" rel="bookmark">' . translate( 'View All Events', 'tribe-events-calendar' ) . '</a></p>';
+            $output .= '<p class="tribe-events-widget-link"><a class="btn btn-white rounded btn-md" href="' . tribe_get_events_link() . '" rel="bookmark">' . translate( 'View All Events', 'tribe-events-calendar' ) . '</a></p>';
 
         }} else { //No Events were Found
         $output .= ( $ckhp_error == 'y' ? '<p>' . translate( 'There are no upcoming events at this time.', 'tribe-events-calendar' ) . '</p>' : '' ) ;
