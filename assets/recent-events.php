@@ -35,7 +35,7 @@ function ckhp_get_tribe_list($atts) {
     }
 
     $posts = tribe_get_events(apply_filters('tribe_events_list_widget_query_args', array(
-        'upcoming' => 'upcoming',
+        'eventDisplay' => 'list',
         'posts_per_page' => $ckhp_number,
         'tax_query'=> $ckhp_event_tax
     )));
