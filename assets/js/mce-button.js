@@ -95,6 +95,12 @@
                             }
                         },
                         {
+                            text: 'Recent Posts Thumbnails Fluid',
+                            onclick: function() {
+                                editor.insertContent('[thumb_recent_posts_fluid column="col-md-4" class="" ptype="" per_page="4"]');
+                            }
+                        },
+                        {
                             text: 'Recent Posts Carousel',
                             onclick: function() {
                                 editor.insertContent('[carousel_recent_posts class="slick-1" category="" ptype="" per_page="8"]');
