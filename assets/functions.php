@@ -120,13 +120,15 @@ function custom_div( $atts, $content = null ) {
    $atts = shortcode_atts(
         array(
             'class' => '',
+            'style' => '',
             'id' => '',
         ), $atts, 'custom_div' );
 
     $class = $atts['class'];
+    $style = $atts['style'];
     $id = $atts['id'];
    
-   return '<div id="'.$id.'" class="'.$class.'" >' . do_shortcode($content) . '</div>';
+   return '<div id="'.$id.'" class="'.$class.'" style="'.$style.'"">' . do_shortcode($content) . '</div>';
 
 }
 
@@ -260,6 +262,33 @@ function popup_video( $atts, $content = null ) {
 
 add_shortcode('popup_video', 'popup_video');
 
+/* Popup Video Play Button */
+
+function popup_playbutton( $atts, $content = null ) {
+    wp_enqueue_script( 'lity-js' );
+    wp_enqueue_style( 'lity-css' );
+    wp_enqueue_style( 'playbutton' );
+
+    $atts = shortcode_atts(
+        array(
+            'class' => '',
+            'url' => '',
+        ), $atts, 'popup_playbutton' );
+
+    $class = $atts['class'];
+    $url = $atts['url'];
+
+    return '
+
+        <a href="'.$url.'" id="play-video" class="video-play-button '.$class.'" data-lity><span></span></a>
+        '
+
+        ;
+
+}
+
+add_shortcode('popup_playbutton', 'popup_playbutton');
+
 /*carousel custom start*/
 function carousel_wrap( $atts, $content = null ) {
     wp_enqueue_script( 'slick-js' );
@@ -303,6 +332,35 @@ function carousel_item( $atts, $content = null ) {
 add_shortcode('carousel_item', 'carousel_item');
 
 /*rcarousel custom end*/
+
+
+/* Search Overlay */
+
+function search_overlay( $form ) {
+    wp_enqueue_style( 'search-css' );
+    wp_enqueue_script( 'search-overlay' );
+    $form = '
+
+    <a class="mk-search-trigger mk-fullscreen-trigger" href="#" id="search-button-listener">
+    <div id="search-button"><i class="fa fa-search"></i></div>
+  </a>
+  <div class="mk-fullscreen-search-overlay" id="mk-search-overlay">
+    <a href="#" class="mk-fullscreen-close" id="mk-fullscreen-close-button"><i class="fa fa-times"></i></a>
+    <div id="mk-fullscreen-search-wrapper">
+      <form role="search" method="get" id="mk-fullscreen-searchform" action="' . home_url( '/' ) . '" >
+        <input type="text" value="' . get_search_query() . '" name="s" placeholder="Search..." id="mk-fullscreen-search-input">
+        <i class="fa fa-search fullscreen-search-icon"><input value="'. esc_attr__('') .'" type="submit"></i>
+      </form>
+    </div>
+  </div>
+
+
+    ';
+
+    return $form;
+}
+
+add_shortcode('search_overlay', 'search_overlay');
 
 
 /* Logged In */

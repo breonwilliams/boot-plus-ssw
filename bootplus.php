@@ -22,11 +22,13 @@ function bootplus_shortcodes_add_scripts() {
     include($bootplus_shortcodes_path.'/assets/functions.php');
       wp_enqueue_style('style-css', $bootplus_shortcodes_directory.'assets/css/style.css');
     wp_register_style( 'lity-css', plugins_url( '/assets/css/lity.css', __FILE__ ), array(), null, 'all' );
+    wp_register_style( 'playbutton', plugins_url( '/assets/css/play-button.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'bgvid-css', plugins_url( '/assets/css/background-vid.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'events-css', plugins_url( '/assets/css/recent-events.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'slick-css', plugins_url( '/assets/css/slick.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'slick-theme', plugins_url( '/assets/css/slick-theme.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'masonry-css', plugins_url( '/assets/css/masonry/styles.css', __FILE__ ), array(), null, 'all' );
+    wp_register_style( 'search-css', plugins_url( '/assets/css/search-overlay.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'dataTables-css', plugins_url( '/assets/css/dataTables/datatables.min.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'dataTables-bootstrap', plugins_url( '/assets/css/dataTables/dataTables.bootstrap.min.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'dataTables-buttons', plugins_url( '/assets/css/dataTables/buttons.bootstrap.min.css', __FILE__ ), array(), null, 'all' );
@@ -63,6 +65,7 @@ function wpb_adding_scripts() {
   wp_register_script( 'materialize-init', $bootplus_shortcodes_directory.'assets/js/dataTables/materialize-init.js', 'jquery','1.0',true);
   wp_register_script( 'slicknav-js', $bootplus_shortcodes_directory.'assets/js/jquery.slicknav.js', 'jquery','1.0',true);
   wp_register_script( 'slicknav-init', $bootplus_shortcodes_directory.'assets/js/slicknav-init.js', 'jquery','1.0',true);
+  wp_register_script( 'search-overlay', $bootplus_shortcodes_directory.'assets/js/search-overlay.js', 'jquery','1.0',true);
 
   wp_enqueue_script( 'slicknav-js' );
   wp_enqueue_script( 'slicknav-init' );

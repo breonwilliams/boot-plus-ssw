@@ -154,7 +154,7 @@ if ( ! function_exists('list_recent_posts_horiz') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a class="float-post-img" href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'medium', array('class' => 'rct-posts-img'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'large', array('class' => 'rct-posts-img'));
                     $output .= '</a>';
 
                 } else {
@@ -481,7 +481,7 @@ if ( ! function_exists('thumb_recent_posts_fluid') ) {
 
                 $output .= '<div id="post-' . get_the_ID() . '" class="mgrid-item '.$column.' ' . implode(' ', get_post_class()) . '">';
 
-                $output .= '<div class="thumbnail">';
+                $output .= '<div class="thumbnail noshadow">';
 
 
 
@@ -548,8 +548,8 @@ add_shortcode('thumb_recent_posts_fluid', 'thumb_recent_posts_fluid');
 /*recent posts thumb fluid end*/
 
 /*recent course list start*/
-add_shortcode( 'list_recent_courses', 'list_recent_courses' );
-function list_recent_courses( $atts ) {
+add_shortcode( 'list_recent_staff', 'list_recent_staff' );
+function list_recent_staff( $atts ) {
     ob_start();
     // define attributes and their defaults
     extract( shortcode_atts( array (
@@ -632,8 +632,8 @@ function list_recent_courses( $atts ) {
 
 /* Recent course list Data Tables */
 
-add_shortcode( 'datatables_recent_courses', 'datatables_recent_courses' );
-function datatables_recent_courses( $atts ) {
+add_shortcode( 'datatables_recent_staff', 'datatables_recent_staff' );
+function datatables_recent_staff( $atts ) {
 
     wp_enqueue_script( 'dataTables-min' );
     wp_enqueue_script( 'buttons-min' );

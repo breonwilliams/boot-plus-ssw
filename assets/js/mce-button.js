@@ -43,13 +43,37 @@
                                 editor.insertContent('[boot_modal button="Modal button" title="Modal Title" class="btn btn-primary" target="modal1" closeclass="btn btn-default" modalsize="modal-lg"][/boot_modal]');
                             }
                 },
-				
-				{
-                    text: 'Popup Video',
+                {
+                    text: 'Search Overlay',
                     onclick: function() {
+                        editor.insertContent('[search_overlay]');
+                    }
+                },
+
+
+
+
+
+
+
+                {
+                    text: 'Popup Video',
+                    menu: [
+                        {
+                            text: 'Popup Video',
+                            onclick: function() {
                                 editor.insertContent('[popup_video class="" url=""][/popup_video]');
                             }
+                        },
+                        {
+                            text: 'Popup Video Play Button',
+                            onclick: function() {
+                                editor.insertContent('[popup_playbutton class="" url=""][/popup_playbutton]');
+                            }
+                        },
+                    ]
                 },
+
                 {
                     text: 'Recent Events',
                     onclick: function() {
@@ -62,7 +86,7 @@
                         {
                             text: 'Alphabetical List',
                             onclick: function() {
-                                editor.insertContent('[gtcc_taxonomy_list taxonomy="course_category" post-type="courses" title=""]');
+                                editor.insertContent('[gtcc_taxonomy_list taxonomy="course_category" post-type="staff" title=""]');
                             }
                         },
                         {
@@ -115,18 +139,18 @@
                     ]
                 },
                 {
-                    text: 'Recent Courses',
+                    text: 'Recent Staff Tables',
                     menu: [
                         {
-                            text: 'Recent Courses List',
+                            text: 'Recent Staff List',
                             onclick: function() {
-                                editor.insertContent('[list_recent_courses course_category="" posts="4" ptype="courses"]');
+                                editor.insertContent('[list_recent_staff course_category="" posts="4" ptype="staff"]');
                             }
                         },
                         {
-                            text: 'Data Tables Courses List',
+                            text: 'Data Tables Staff List',
                             onclick: function() {
-                                editor.insertContent('[datatables_recent_courses course_category="" posts="-1" ptype="courses"]');
+                                editor.insertContent('[datatables_recent_staff course_category="" posts="-1" ptype="staff"]');
                             }
                         },
                     ]
@@ -140,7 +164,7 @@
                 {
                     text: 'Custom Div',
                     onclick: function() {
-                                editor.insertContent('[custom_div class=""][/custom_div]');
+                                editor.insertContent('[custom_div class="" style=""][/custom_div]');
                             }
                 },
                 {
