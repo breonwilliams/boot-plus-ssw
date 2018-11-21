@@ -237,6 +237,7 @@ ul.rct-posts-horiz {
 @media (min-width: 767px) {
     .rct-post-hwrap .rct-posts-img {
         max-width: 300px;
+        margin-right: 25px;
     }
 }
 
@@ -275,7 +276,7 @@ ul.rct-posts-horiz {
 }
 
 .rct-post-content {
-    padding: 30px;
+    padding: 40px;
 }
 
 .rct-posts-horiz  .date {
@@ -286,7 +287,6 @@ ul.rct-posts-horiz {
 }
 
 .rct-posts-horiz .media-heading a {
-    text-transform: uppercase;
     color: #121212;
 }
 

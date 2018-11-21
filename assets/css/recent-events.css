@@ -100,7 +100,7 @@
 @media (min-width: 1200px) {
   .event-calendar .event-post .event-details {
     float:left;
-    width:79.16667%;
+    /*width:79.16667%;*/
   }
 }
 .event-calendar .event-post .event-details p {

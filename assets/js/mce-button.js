@@ -32,6 +32,12 @@
                             onclick: function() {
                                 editor.insertContent('[parallax_section bgimg="" class="" overlay=""][/parallax_section]');
                             }
+                        },
+                        {
+                            text: 'Square Background Section Image',
+                            onclick: function() {
+                                editor.insertContent('[square_section class="" style="" bg-img=""][/square_section]');
+                            }
                         }
 
                     ]

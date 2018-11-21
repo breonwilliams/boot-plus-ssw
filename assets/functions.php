@@ -112,6 +112,32 @@ function parallax_section( $atts, $content = null ) {
 
 add_shortcode('parallax_section', 'parallax_section');
 
+/*full width background color end*/
+
+/*square background section*/
+
+function square_section( $atts, $content = null ) {
+    wp_enqueue_style( 'square-css' );
+    $atts = shortcode_atts(
+        array(
+            'bgimg' => '',
+            'class' => '',
+            'style' => '',
+            'id' => '',
+        ), $atts, 'custom_div' );
+
+    $bgimg = $atts['bgimg'];
+    $class = $atts['class'];
+    $style = $atts['style'];
+    $id = $atts['id'];
+
+    return '<div id="'.$id.'" class="square-container " ><div class="square-position"><div class="square bg-img '.$class.'" style="background-image:url('.$bgimg.'); '.$style.'""><div class="square-inn rounded">' . do_shortcode($content) . '</div></div></div></div>';
+
+}
+
+add_shortcode('square_section', 'square_section');
+
+
 
 /* Custom Div */
 
@@ -134,7 +160,7 @@ function custom_div( $atts, $content = null ) {
 
 add_shortcode('custom_div', 'custom_div');
 
-/*full width background color end*/
+
 
 
 

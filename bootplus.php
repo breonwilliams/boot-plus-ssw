@@ -23,6 +23,7 @@ function bootplus_shortcodes_add_scripts() {
       wp_enqueue_style('style-css', $bootplus_shortcodes_directory.'assets/css/style.css');
     wp_register_style( 'lity-css', plugins_url( '/assets/css/lity.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'playbutton', plugins_url( '/assets/css/play-button.css', __FILE__ ), array(), null, 'all' );
+    wp_register_style( 'square-css', plugins_url( '/assets/css/square-section.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'bgvid-css', plugins_url( '/assets/css/background-vid.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'events-css', plugins_url( '/assets/css/recent-events.css', __FILE__ ), array(), null, 'all' );
     wp_register_style( 'slick-css', plugins_url( '/assets/css/slick.css', __FILE__ ), array(), null, 'all' );
@@ -101,7 +102,18 @@ add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
 
 
-
+// Limit except length to 125 characters.
+// tn limited excerpt length by number of characters
+function get_excerpt( $count ) {
+  global $post;
+  $permalink = get_permalink($post->ID);
+  $excerpt = get_the_content();
+  $excerpt = strip_tags($excerpt);
+  $excerpt = substr($excerpt, 0, $count);
+  $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+  $excerpt = '<p>'.$excerpt.'... <a href="'.$permalink.'">Read More</a></p>';
+  return $excerpt;
+}
 
 
 

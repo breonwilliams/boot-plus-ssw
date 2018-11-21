@@ -154,7 +154,7 @@ if ( ! function_exists('list_recent_posts_horiz') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a class="float-post-img" href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'large', array('class' => 'rct-posts-img'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'article_thumbnail', array('class' => 'rct-posts-img'));
                     $output .= '</a>';
 
                 } else {
@@ -163,17 +163,17 @@ if ( ! function_exists('list_recent_posts_horiz') ) {
 
                 if ( has_post_thumbnail() ) {
 
-                    $output .= '<div class="rct-post-content caption-fixedh">';
+                    $output .= '<div class="rct-post-content">';
 
                 } else {
-                    $output .= '<div class="rct-post-content caption-fixedh no-img">';
+                    $output .= '<div class="rct-post-content no-img">';
                 }
 
                 $output .= '<p class="date">' . get_the_date() . '</p>';
 
                 $output .= '<h4 class="media-heading"><span><a href="' . get_permalink() . '" title="' . the_title('','',false) . '">' . the_title('','',false) . '</a></span></h4>';
 
-                $output .= get_the_excerpt();
+                $output .= get_excerpt(180);
 
                 $output .= '</div>';
                 $output .= '<div class="clearfix"></div>';
@@ -273,7 +273,7 @@ if ( ! function_exists('carousel_recent_posts') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'article_thumbnail', array('class' => 'img-responsive aligncenter'));
                     $output .= '</a>';
 
                 } else {
@@ -376,7 +376,7 @@ if ( ! function_exists('thumb_recent_posts') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'article_thumbnail', array('class' => 'img-responsive aligncenter'));
                     $output .= '</a>';
 
                 } else {
@@ -488,7 +488,7 @@ if ( ! function_exists('thumb_recent_posts_fluid') ) {
                 if ( has_post_thumbnail() ) {
 
                     $output .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                    $output .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                    $output .= get_the_post_thumbnail( get_the_id(), 'article_thumbnail', array('class' => 'img-responsive aligncenter'));
                     $output .= '</a>';
 
                 } else {
@@ -807,7 +807,7 @@ function fphp_get_related_posts($atts) {
             if ( has_post_thumbnail() ) {
 
                 $html .= '<a href="' . get_permalink() . '" title="' . the_title('','',false) . '">';
-                $html .= get_the_post_thumbnail( get_the_id(), 'post_thumbnail_lg', array('class' => 'img-responsive aligncenter'));
+                $html .= get_the_post_thumbnail( get_the_id(), 'article_thumbnail', array('class' => 'img-responsive aligncenter'));
                 $html .= '</a>';
 
             } else {
