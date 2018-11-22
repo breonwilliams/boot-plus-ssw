@@ -1,15 +1,15 @@
 jQuery(function ($) {
-    if($('#gtcc-menu').length) {
-        $('#gtcc-slick').slicknav({
-            label: 'GTCC Menu',
+    if($('#unc-menu').length) {
+        $('#unc-slick').slicknav({
+            label: 'Menu',
             duration: 500,
-            prependTo: '#gtcc-menu',
+            prependTo: '#unc-menu',
             init: function (autoopen) {
             }
         });
 
         $(function (autoopen) {
-            jQuery('#gtcc-slick').slicknav('close');
+            jQuery('#unc-slick').slicknav('close');
         });
     }
 });
