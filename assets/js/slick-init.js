@@ -30,7 +30,7 @@ jQuery(function($) {
 
     $('.slick-2').slick({
         dots: true,
-        arrows: false,
+        arrows: true,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
