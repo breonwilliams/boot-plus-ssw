@@ -170,3 +170,11 @@ include($bootplus_shortcodes_path.'/assets/menu-shortcode.php');
 //include($bootplus_shortcodes_path.'/assets/cpt-ui/post-types.php');
 //include($bootplus_shortcodes_path.'/assets/cpt-ui/taxonomies.php');
 //include($bootplus_shortcodes_path.'/assets/custom-fields/field-groups.php');
+
+if ( 'option2' == get_theme_mod( 'themeslug_post_content' ) ) :
+  include($bootplus_shortcodes_path.'/assets/cpt-ui/post-types.php');
+  include($bootplus_shortcodes_path.'/assets/cpt-ui/taxonomies.php');
+  include($bootplus_shortcodes_path.'/assets/custom-fields/field-groups.php');
+else :
+
+endif;

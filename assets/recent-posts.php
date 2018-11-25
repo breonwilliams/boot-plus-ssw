@@ -557,7 +557,7 @@ function list_recent_staff( $atts ) {
         'category' => '',
         'ptype' => '',
         'class' => '',
-        'course_category' => '',
+        'staff_category' => '',
     ), $atts ) );
 
     $class = $atts['class'];
@@ -567,7 +567,7 @@ function list_recent_staff( $atts ) {
         'posts_per_page' => $posts,
         'post_type' => $ptype,
         'category_name' => $category,
-        'course_category' => $course_category,
+        'staff_category' => $staff_category,
         'orderby'=>'title',
 		'order'=>'ASC',
     );
@@ -662,7 +662,7 @@ function datatables_recent_staff( $atts ) {
         'category' => '',
         'ptype' => '',
         'class' => '',
-        'course_category' => '',
+        'staff_category' => '',
     ), $atts ) );
 
 
@@ -671,7 +671,7 @@ function datatables_recent_staff( $atts ) {
         'posts_per_page' => $posts,
         'post_type' => $ptype,
         'category_name' => $category,
-        'course_category' => $course_category,
+        'staff_category' => $staff_category,
         'orderby'=>'title',
 		'order'=>'ASC',
     );

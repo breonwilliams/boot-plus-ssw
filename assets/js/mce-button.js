@@ -92,13 +92,13 @@
                         {
                             text: 'Alphabetical List',
                             onclick: function() {
-                                editor.insertContent('[gtcc_taxonomy_list taxonomy="course_category" post-type="staff" title=""]');
+                                editor.insertContent('[unc_taxonomy_list taxonomy="staff_category" post-type="staff" title=""]');
                             }
                         },
                         {
                             text: 'Hierarchical List',
                             onclick: function() {
-                                editor.insertContent('[ct_terms custom_taxonomy="course_category"]');
+                                editor.insertContent('[ct_terms custom_taxonomy="staff_category"]');
                             }
                         },
                     ]
@@ -150,13 +150,13 @@
                         {
                             text: 'Recent Staff List',
                             onclick: function() {
-                                editor.insertContent('[list_recent_staff course_category="" posts="4" ptype="staff"]');
+                                editor.insertContent('[list_recent_staff staff_category="" posts="4" ptype="staff"]');
                             }
                         },
                         {
                             text: 'Data Tables Staff List',
                             onclick: function() {
-                                editor.insertContent('[datatables_recent_staff course_category="" posts="-1" ptype="staff"]');
+                                editor.insertContent('[datatables_recent_staff staff_category="" posts="-1" ptype="staff"]');
                             }
                         },
                     ]

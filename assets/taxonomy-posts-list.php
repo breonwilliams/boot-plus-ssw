@@ -2,7 +2,7 @@
 /**
  * Taxonomy Posts List
  */
-function gtcc_taxonomy_list( $atts ) {
+function unc_taxonomy_list( $atts ) {
 	$a = shortcode_atts( array(
 		'taxonomy' => '',
 		'post-type' => 'post',
@@ -65,7 +65,7 @@ function gtcc_taxonomy_list( $atts ) {
 	}
 	return $filter_text;
 }
-add_shortcode( 'gtcc_taxonomy_list', 'gtcc_taxonomy_list' );
+add_shortcode( 'unc_taxonomy_list', 'unc_taxonomy_list' );
 
 // hierarchical list
 
@@ -80,8 +80,8 @@ function list_terms_custom_taxonomy( $atts ) {
 
 // arguments for function wp_list_categories
 	$args = array(
-		taxonomy => $custom_taxonomy,
-		title_li => ''
+		'taxonomy' => $custom_taxonomy,
+		'title_li' => ''
 	);
 
 // We wrap it in unordered list
