@@ -147,12 +147,7 @@
                 {
                     text: 'Recent Staff Tables',
                     menu: [
-                        {
-                            text: 'Recent Staff List',
-                            onclick: function() {
-                                editor.insertContent('[list_recent_staff staff_category="" posts="4" ptype="staff"]');
-                            }
-                        },
+
                         {
                             text: 'Data Tables Staff List',
                             onclick: function() {
