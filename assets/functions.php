@@ -1,12 +1,12 @@
 <?php
 
 
-function clean_shortcodes($content) {   
+function clean_shortcodes($content) {
     $array = array (
-        '<p>[' => '[', 
+        '<p>[' => '[',
         ']</p>' => ']',
-        '<p><span>[' => '[', 
-        ']</span></p>' => ']', 
+        '<p><span>[' => '[',
+        ']</span></p>' => ']',
         ']<br />' => ']'
     );
 
@@ -153,7 +153,7 @@ function custom_div( $atts, $content = null ) {
     $class = $atts['class'];
     $style = $atts['style'];
     $id = $atts['id'];
-   
+
    return '<div id="'.$id.'" class="'.$class.'" style="'.$style.'"">' . do_shortcode($content) . '</div>';
 
 }
@@ -167,7 +167,7 @@ add_shortcode('custom_div', 'custom_div');
 /* Background Video */
 
 function background_vid( $atts, $content = null ) {
-    wp_enqueue_script( 'bgvid' );  
+    wp_enqueue_script( 'bgvid' );
     wp_enqueue_script( 'bgvid-js' );
     wp_enqueue_style( 'bgvid-css' );
 
@@ -482,3 +482,51 @@ function alphaindex_queries( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'alphaindex_queries' );
+
+
+
+/* Image Audio Player */
+function img_audio( $atts, $content = null ) {
+
+   $atts = shortcode_atts(
+        array(
+            'mp3' => '',
+            'img' => '',
+            'pause_img' => '',
+            'class' => '',
+            'id' => '',
+        ), $atts, 'img_section' );
+
+
+    $mp3 = $atts['mp3'];
+    $pause_img = $atts['pause_img'];
+    $img = $atts['img'];
+    $class = $atts['class'];
+    $id = $atts['id'];
+
+   return '
+
+   <audio id="'.$id.'">
+     <source src="'.$mp3.'" type="audio/mpeg" />
+   </audio>
+   <img class="'.$class.'" src="'.$img.'" onclick="playAudio()" />
+   <img class="'.$class.'" src="'.$pause_img.'" onclick="pauseAudio()" />
+
+
+   <script>
+   var x = document.getElementById("'.$id.'");
+
+   function playAudio() {
+     x.play();
+   }
+
+   function pauseAudio() {
+     x.pause();
+   }
+   </script>
+
+    ';
+
+}
+
+add_shortcode('img_audio', 'img_audio');

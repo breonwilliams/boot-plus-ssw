@@ -77,6 +77,12 @@
                                 editor.insertContent('[popup_playbutton class="" url=""][/popup_playbutton]');
                             }
                         },
+												{
+                            text: 'Audio Player',
+                            onclick: function() {
+                                editor.insertContent('[img_audio mp3="" img="" pause_img="" class="" id=""][/img_audio]');
+                            }
+                        }
                     ]
                 },
 
@@ -220,7 +226,7 @@
                         }
                     ]
                 }
-				
+
 			]
 		});
 	});
