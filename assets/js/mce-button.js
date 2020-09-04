@@ -80,7 +80,7 @@
 												{
                             text: 'Audio Player',
                             onclick: function() {
-                                editor.insertContent('[img_audio mp3="" img="" pause_img="" class="" id=""][/img_audio]');
+                                editor.insertContent('[img_audio mp3="" img="" pause_img="" play_class="" pause_class="" id=""][/img_audio]');
                             }
                         }
                     ]

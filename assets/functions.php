@@ -493,7 +493,8 @@ function img_audio( $atts, $content = null ) {
             'mp3' => '',
             'img' => '',
             'pause_img' => '',
-            'class' => '',
+            'play_class' => '',
+            'pause_class' => '',
             'id' => '',
         ), $atts, 'img_section' );
 
@@ -501,7 +502,8 @@ function img_audio( $atts, $content = null ) {
     $mp3 = $atts['mp3'];
     $pause_img = $atts['pause_img'];
     $img = $atts['img'];
-    $class = $atts['class'];
+    $play_class = $atts['play_class'];
+    $pause_class = $atts['pause_class'];
     $id = $atts['id'];
 
    return '
@@ -509,8 +511,8 @@ function img_audio( $atts, $content = null ) {
    <audio id="'.$id.'">
      <source src="'.$mp3.'" type="audio/mpeg" />
    </audio>
-   <img class="'.$class.'" src="'.$img.'" onclick="playAudio()" />
-   <img class="'.$class.'" src="'.$pause_img.'" onclick="pauseAudio()" />
+   <img class="'.$play_class.'" src="'.$img.'" onclick="playAudio()" />
+   <img class="'.$pause_class.'" src="'.$pause_img.'" onclick="pauseAudio()" />
 
 
    <script>
