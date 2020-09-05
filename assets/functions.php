@@ -505,11 +505,12 @@ wp_enqueue_script( 'audio-player' );
 
    return '
 
+
    <audio id="sound'.$id.'">
      <source src="'.$mp3.'" type="audio/mpeg" />
    </audio>
-   <img class="play '.$play_class.'" id="'.$id.'" src="'.$img.'" />
-   <img class="play '.$pause_class.'" id="'.$id.'" src="'.$pause_img.'" />
+   <div class="play '.$play_class.'" id="'.$id.'" style="background-image: url('.$img.'); background-size: contain; background-repeat: no-repeat; background-position: center center; min-height: 350px;">
+   </div>
    ';
 
 }
