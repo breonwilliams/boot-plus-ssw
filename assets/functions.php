@@ -487,47 +487,30 @@ add_action( 'pre_get_posts', 'alphaindex_queries' );
 
 /* Image Audio Player */
 function img_audio( $atts, $content = null ) {
+wp_enqueue_script( 'audio-player' );
 
    $atts = shortcode_atts(
         array(
             'mp3' => '',
             'img' => '',
-            'pause_img' => '',
             'play_class' => '',
-            'pause_class' => '',
             'id' => '',
         ), $atts, 'img_section' );
 
 
     $mp3 = $atts['mp3'];
-    $pause_img = $atts['pause_img'];
     $img = $atts['img'];
     $play_class = $atts['play_class'];
-    $pause_class = $atts['pause_class'];
     $id = $atts['id'];
 
    return '
 
-   <audio id="'.$id.'">
+   <audio id="sound'.$id.'">
      <source src="'.$mp3.'" type="audio/mpeg" />
    </audio>
-   <img class="'.$play_class.'" src="'.$img.'" onclick="playAudio()" />
-   <img class="'.$pause_class.'" src="'.$pause_img.'" onclick="pauseAudio()" />
-
-
-   <script>
-   var x = document.getElementById("'.$id.'");
-
-   function playAudio() {
-     x.play();
-   }
-
-   function pauseAudio() {
-     x.pause();
-   }
-   </script>
-
-    ';
+   <img class="play '.$play_class.'" id="'.$id.'" src="'.$img.'" />
+   <img class="play '.$pause_class.'" id="'.$id.'" src="'.$pause_img.'" />
+   ';
 
 }
 
